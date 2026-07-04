@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<!-- saved from url=(0058)file:///C:/Users/clari/Downloads/pierro-icon-concepts.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pierro Productions — Icon Mark Concepts</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="./Pierro Productions — Icon Mark Concepts_files/css2" rel="stylesheet">
+<link href="./Pierro Productions — Icon Mark Concepts_files/css" rel="stylesheet">
+
+<style>
+  :root{
+    --charcoal:#18181a;
+    --charcoal-2:#222224;
+    --sage:#8fac7e;
+    --porcelain:#f6e5d3;
+    --orchid:#e73788;
+    --rose:#f8ccc9;
+  }
+  *,*::before,*::after{ box-sizing:border-box; }
+  html,body{
+    margin:0;
+    background:var(--charcoal);
+    color:var(--porcelain);
+    font-family:'Switzer', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  main{ max-width:980px; margin:0 auto; padding:3rem 1.5rem 4rem; }
+
+  .eyebrow{ font-size:.72rem; letter-spacing:.18em; text-transform:uppercase; opacity:.55; margin:0 0 .8rem; }
+  h1{
+    font-family:'Fraunces', Georgia, serif;
+    font-weight:480;
+    font-size:clamp(1.9rem, 5vw, 2.8rem);
+    line-height:1.08;
+    letter-spacing:-0.01em;
+    margin:0 0 1rem;
+    text-wrap:balance;
+  }
+  p.lede{
+    font-size:1rem;
+    line-height:1.65;
+    max-width:46ch;
+    opacity:.8;
+    margin:0 0 2.6rem;
+  }
+
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+    gap:1.4rem;
+  }
+  .card{
+    background:var(--charcoal-2);
+    border-radius:14px;
+    padding:1.6rem 1.4rem 1.4rem;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+  }
+  .card .icon-render{ width:110px; height:110px; margin-bottom:1rem; }
+  .card .icon-render svg{ width:100%; height:100%; display:block; }
+  .card h2{
+    font-family:'Fraunces', Georgia, serif;
+    font-weight:480;
+    font-size:1.05rem;
+    margin:0 0 .4rem;
+  }
+  .tag{
+    display:inline-block;
+    font-size:.62rem;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--charcoal);
+    background:var(--orchid);
+    padding:.2rem .55rem;
+    border-radius:999px;
+    margin-bottom:.6rem;
+  }
+  .card p{
+    font-size:.85rem;
+    line-height:1.55;
+    opacity:.75;
+    margin:0 0 1.1rem;
+    max-width:24ch;
+  }
+  details{ width:100%; text-align:left; }
+  summary{
+    cursor:pointer;
+    font-size:.74rem;
+    letter-spacing:.04em;
+    color:var(--sage);
+    margin-bottom:.5rem;
+  }
+  pre{
+    margin:0;
+    font-size:.68rem;
+    line-height:1.5;
+    color:rgba(246,229,211,.7);
+    background:rgba(0,0,0,.25);
+    border-radius:8px;
+    padding:.8rem;
+    overflow-x:auto;
+    white-space:pre-wrap;
+    word-break:break-word;
+  }
+
+  footer.note{
+    margin-top:2.6rem;
+    font-size:.72rem;
+    line-height:1.6;
+    opacity:.55;
+    max-width:60ch;
+  }
+
+  /* ---------- marks ---------- */
+  .mark-eye .eye-rotate{ transform-origin:50px 50px; animation:markSpin 36s linear infinite; }
+  .mark-eye .eye-core{ transform-box:fill-box; transform-origin:center; animation:eyeCore 3.2s ease-in-out infinite; }
+
+  .mark-vein .vein-line{ fill:none; stroke:var(--porcelain); stroke-width:1.6; stroke-dasharray:1; stroke-dashoffset:1; animation:veinDraw 4.4s ease-in-out infinite; }
+  .mark-vein .vein-bloom{ animation:veinBloom 4.4s ease-in-out infinite; }
+
+  .mark-conv .conv-spin{ transform-origin:50px 50px; animation:markSpin 48s linear infinite; }
+
+  .mark-scatter .scatter-dot{ transform-box:fill-box; transform-origin:center; animation:scatterPulse 3.6s ease-in-out infinite; }
+  .mark-scatter .scatter-core{ transform-box:fill-box; transform-origin:center; animation:scatterCore 3.6s ease-in-out infinite; }
+
+  @keyframes markSpin{ to{ transform:rotate(360deg); } }
+  @keyframes eyeCore{ 0%,100%{ transform:scale(1); opacity:1; } 50%{ transform:scale(1.25); opacity:.7; } }
+  @keyframes veinDraw{ 0%{ stroke-dashoffset:1; } 35%{ stroke-dashoffset:0; } 70%{ stroke-dashoffset:0; } 100%{ stroke-dashoffset:1; } }
+  @keyframes veinBloom{ 0%{ r:0; opacity:0; } 35%{ r:7; opacity:1; } 70%{ r:7; opacity:1; } 100%{ r:0; opacity:0; } }
+  @keyframes scatterPulse{ 0%,100%{ transform:scale(1); opacity:.55; } 50%{ transform:scale(1.6); opacity:1; } }
+  @keyframes scatterCore{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(.82); } }
+
+  @media (prefers-reduced-motion: reduce){
+    .mark *{ animation:none !important; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <p class="eyebrow">Mark concepts</p>
+  <h1>From the meeting point on the wing</h1>
+  <p class="lede">Where the green dappled scales meet the black-ringed pink, abstracted into four marks. Each one is live, animated SVG — open "view code" on any card to copy it straight into Figma or a codebase.</p>
+
+  <div class="grid">
+
+    <article class="card" data-icon="eye">
+      <span class="tag">Recommended primary mark</span>
+      <div class="icon-render"><svg viewBox="0 0 100 100" class="mark mark-eye">
+  <circle cx="50" cy="50" r="44" fill="none" stroke="#F6E5D3" stroke-width="1" opacity="0.25"></circle>
+  <g class="eye-rotate">
+    <circle cx="50" cy="50" r="34" fill="none" stroke="#8FAC7E" stroke-width="7" stroke-dasharray="1 7" stroke-linecap="round"></circle>
+  </g>
+  <circle cx="50" cy="50" r="20" fill="#F8CCC9"></circle>
+  <circle cx="50" cy="50" r="9" fill="#E73788" class="eye-core"></circle>
+</svg></div>
+      <h2>Eye Mark</h2>
+      <p>The eyespot, distilled to three rings. Works at favicon size. Ties straight to "I see your frequency before you do."</p>
+      <details>
+        <summary>View SVG code</summary>
+        <pre class="icon-code">&lt;svg viewBox="0 0 100 100" class="mark mark-eye"&gt;
+  &lt;circle cx="50" cy="50" r="44" fill="none" stroke="#F6E5D3" stroke-width="1" opacity="0.25"/&gt;
+  &lt;g class="eye-rotate"&gt;
+    &lt;circle cx="50" cy="50" r="34" fill="none" stroke="#8FAC7E" stroke-width="7" stroke-dasharray="1 7" stroke-linecap="round"/&gt;
+  &lt;/g&gt;
+  &lt;circle cx="50" cy="50" r="20" fill="#F8CCC9"/&gt;
+  &lt;circle cx="50" cy="50" r="9" fill="#E73788" class="eye-core"/&gt;
+&lt;/svg&gt;</pre>
+      </details>
+    </article>
+
+    <article class="card" data-icon="vein">
+      <div class="icon-render"><svg viewBox="0 0 100 100" class="mark mark-vein">
+  <path class="vein-line" d="M10,15 Q40,28 50,50" pathLength="1"></path>
+  <path class="vein-line" d="M90,18 Q62,32 50,50" pathLength="1"></path>
+  <path class="vein-line" d="M50,95 Q50,72 50,50" pathLength="1"></path>
+  <circle cx="44" cy="45" r="1.6" fill="#8FAC7E" opacity=".8"></circle>
+  <circle cx="57" cy="43" r="1.3" fill="#8FAC7E" opacity=".6"></circle>
+  <circle cx="50" cy="50" r="0" fill="#E73788" class="vein-bloom"></circle>
+</svg></div>
+      <h2>Vein Knot</h2>
+      <p>Lines converge, then bloom. Good for loading states, section dividers, a "thinking" indicator.</p>
+      <details>
+        <summary>View SVG code</summary>
+        <pre class="icon-code">&lt;svg viewBox="0 0 100 100" class="mark mark-vein"&gt;
+  &lt;path class="vein-line" d="M10,15 Q40,28 50,50" pathLength="1"/&gt;
+  &lt;path class="vein-line" d="M90,18 Q62,32 50,50" pathLength="1"/&gt;
+  &lt;path class="vein-line" d="M50,95 Q50,72 50,50" pathLength="1"/&gt;
+  &lt;circle cx="44" cy="45" r="1.6" fill="#8FAC7E" opacity=".8"/&gt;
+  &lt;circle cx="57" cy="43" r="1.3" fill="#8FAC7E" opacity=".6"/&gt;
+  &lt;circle cx="50" cy="50" r="0" fill="#E73788" class="vein-bloom"/&gt;
+&lt;/svg&gt;</pre>
+      </details>
+    </article>
+
+    <article class="card" data-icon="conv">
+      <div class="icon-render"><svg viewBox="0 0 100 100" class="mark mark-conv">
+  <defs>
+    <clippath id="convLeft"><rect x="0" y="0" width="50" height="100"></rect></clippath>
+  </defs>
+  <g class="conv-spin">
+    <circle cx="50" cy="50" r="36" fill="#E73788"></circle>
+    <g clip-path="url(#convLeft)">
+      <circle cx="50" cy="50" r="36" fill="#18181A"></circle>
+      <circle cx="30" cy="36" r="2" fill="#8FAC7E"></circle>
+      <circle cx="22" cy="48" r="1.6" fill="#8FAC7E"></circle>
+      <circle cx="34" cy="58" r="1.8" fill="#8FAC7E"></circle>
+      <circle cx="26" cy="66" r="1.4" fill="#8FAC7E"></circle>
+      <circle cx="36" cy="42" r="1.3" fill="#8FAC7E"></circle>
+    </g>
+    <line x1="50" y1="14" x2="50" y2="86" stroke="#F6E5D3" stroke-width="1" opacity=".35"></line>
+  </g>
+</svg></div>
+      <h2>Convergence Dot</h2>
+      <p>The seam between the two textures, always slowly turning. Good as an ambient corner mark or page-load spinner.</p>
+      <details>
+        <summary>View SVG code</summary>
+        <pre class="icon-code">&lt;svg viewBox="0 0 100 100" class="mark mark-conv"&gt;
+  &lt;defs&gt;
+    &lt;clipPath id="convLeft"&gt;&lt;rect x="0" y="0" width="50" height="100"/&gt;&lt;/clipPath&gt;
+  &lt;/defs&gt;
+  &lt;g class="conv-spin"&gt;
+    &lt;circle cx="50" cy="50" r="36" fill="#E73788"/&gt;
+    &lt;g clip-path="url(#convLeft)"&gt;
+      &lt;circle cx="50" cy="50" r="36" fill="#18181A"/&gt;
+      &lt;circle cx="30" cy="36" r="2" fill="#8FAC7E"/&gt;
+      &lt;circle cx="22" cy="48" r="1.6" fill="#8FAC7E"/&gt;
+      &lt;circle cx="34" cy="58" r="1.8" fill="#8FAC7E"/&gt;
+      &lt;circle cx="26" cy="66" r="1.4" fill="#8FAC7E"/&gt;
+      &lt;circle cx="36" cy="42" r="1.3" fill="#8FAC7E"/&gt;
+    &lt;/g&gt;
+    &lt;line x1="50" y1="14" x2="50" y2="86" stroke="#F6E5D3" stroke-width="1" opacity=".35"/&gt;
+  &lt;/g&gt;
+&lt;/svg&gt;</pre>
+      </details>
+    </article>
+
+    <article class="card" data-icon="scatter">
+      <div class="icon-render"><svg viewBox="0 0 100 100" class="mark mark-scatter">
+  <circle cx="50" cy="50" r="11" fill="#E73788" class="scatter-core"></circle>
+  <circle cx="50" cy="22" r="2.2" fill="#18181A" class="scatter-dot" style="animation-delay:0s"></circle>
+  <circle cx="74" cy="34" r="1.8" fill="#8FAC7E" class="scatter-dot" style="animation-delay:.3s"></circle>
+  <circle cx="78" cy="62" r="2" fill="#18181A" class="scatter-dot" style="animation-delay:.6s"></circle>
+  <circle cx="58" cy="80" r="1.6" fill="#8FAC7E" class="scatter-dot" style="animation-delay:.9s"></circle>
+  <circle cx="30" cy="76" r="2" fill="#18181A" class="scatter-dot" style="animation-delay:1.2s"></circle>
+  <circle cx="20" cy="50" r="1.8" fill="#8FAC7E" class="scatter-dot" style="animation-delay:1.5s"></circle>
+  <circle cx="28" cy="26" r="1.6" fill="#18181A" class="scatter-dot" style="animation-delay:1.8s"></circle>
+</svg></div>
+      <h2>Scatter to Solid</h2>
+      <p>Scattered becomes whole, breathing in reverse of the center. Good for a hover state on cards or CTAs, not a static mark.</p>
+      <details>
+        <summary>View SVG code</summary>
+        <pre class="icon-code">&lt;svg viewBox="0 0 100 100" class="mark mark-scatter"&gt;
+  &lt;circle cx="50" cy="50" r="11" fill="#E73788" class="scatter-core"/&gt;
+  &lt;circle cx="50" cy="22" r="2.2" fill="#18181A" class="scatter-dot" style="animation-delay:0s"/&gt;
+  &lt;circle cx="74" cy="34" r="1.8" fill="#8FAC7E" class="scatter-dot" style="animation-delay:.3s"/&gt;
+  &lt;circle cx="78" cy="62" r="2" fill="#18181A" class="scatter-dot" style="animation-delay:.6s"/&gt;
+  &lt;circle cx="58" cy="80" r="1.6" fill="#8FAC7E" class="scatter-dot" style="animation-delay:.9s"/&gt;
+  &lt;circle cx="30" cy="76" r="2" fill="#18181A" class="scatter-dot" style="animation-delay:1.2s"/&gt;
+  &lt;circle cx="20" cy="50" r="1.8" fill="#8FAC7E" class="scatter-dot" style="animation-delay:1.5s"/&gt;
+  &lt;circle cx="28" cy="26" r="1.6" fill="#18181A" class="scatter-dot" style="animation-delay:1.8s"/&gt;
+&lt;/svg&gt;</pre>
+      </details>
+    </article>
+
+  </div>
+
+  <footer class="note">
+    Body copy on this page is set in Switzer (free, Fontshare) — the closest free stand-in for Söhne once Inter and IBM Plex Sans are off the table. Headlines stay in Fraunces as a placeholder for Prime Serif until that's licensed.
+  </footer>
+</main>
+
+<script>
+(function(){
+  var ICONS = {
+    eye: `<svg viewBox="0 0 100 100" class="mark mark-eye">
+  <circle cx="50" cy="50" r="44" fill="none" stroke="#F6E5D3" stroke-width="1" opacity="0.25"/>
+  <g class="eye-rotate">
+    <circle cx="50" cy="50" r="34" fill="none" stroke="#8FAC7E" stroke-width="7" stroke-dasharray="1 7" stroke-linecap="round"/>
+  </g>
+  <circle cx="50" cy="50" r="20" fill="#F8CCC9"/>
+  <circle cx="50" cy="50" r="9" fill="#E73788" class="eye-core"/>
+</svg>`,
+    vein: `<svg viewBox="0 0 100 100" class="mark mark-vein">
+  <path class="vein-line" d="M10,15 Q40,28 50,50" pathLength="1"/>
+  <path class="vein-line" d="M90,18 Q62,32 50,50" pathLength="1"/>
+  <path class="vein-line" d="M50,95 Q50,72 50,50" pathLength="1"/>
+  <circle cx="44" cy="45" r="1.6" fill="#8FAC7E" opacity=".8"/>
+  <circle cx="57" cy="43" r="1.3" fill="#8FAC7E" opacity=".6"/>
+  <circle cx="50" cy="50" r="0" fill="#E73788" class="vein-bloom"/>
+</svg>`,
+    conv: `<svg viewBox="0 0 100 100" class="mark mark-conv">
+  <defs>
+    <clipPath id="convLeft"><rect x="0" y="0" width="50" height="100"/></clipPath>
+  </defs>
+  <g class="conv-spin">
+    <circle cx="50" cy="50" r="36" fill="#E73788"/>
+    <g clip-path="url(#convLeft)">
+      <circle cx="50" cy="50" r="36" fill="#18181A"/>
+      <circle cx="30" cy="36" r="2" fill="#8FAC7E"/>
+      <circle cx="22" cy="48" r="1.6" fill="#8FAC7E"/>
+      <circle cx="34" cy="58" r="1.8" fill="#8FAC7E"/>
+      <circle cx="26" cy="66" r="1.4" fill="#8FAC7E"/>
+      <circle cx="36" cy="42" r="1.3" fill="#8FAC7E"/>
+    </g>
+    <line x1="50" y1="14" x2="50" y2="86" stroke="#F6E5D3" stroke-width="1" opacity=".35"/>
+  </g>
+</svg>`,
+    scatter: `<svg viewBox="0 0 100 100" class="mark mark-scatter">
+  <circle cx="50" cy="50" r="11" fill="#E73788" class="scatter-core"/>
+  <circle cx="50" cy="22" r="2.2" fill="#18181A" class="scatter-dot" style="animation-delay:0s"/>
+  <circle cx="74" cy="34" r="1.8" fill="#8FAC7E" class="scatter-dot" style="animation-delay:.3s"/>
+  <circle cx="78" cy="62" r="2" fill="#18181A" class="scatter-dot" style="animation-delay:.6s"/>
+  <circle cx="58" cy="80" r="1.6" fill="#8FAC7E" class="scatter-dot" style="animation-delay:.9s"/>
+  <circle cx="30" cy="76" r="2" fill="#18181A" class="scatter-dot" style="animation-delay:1.2s"/>
+  <circle cx="20" cy="50" r="1.8" fill="#8FAC7E" class="scatter-dot" style="animation-delay:1.5s"/>
+  <circle cx="28" cy="26" r="1.6" fill="#18181A" class="scatter-dot" style="animation-delay:1.8s"/>
+</svg>`
+  };
+
+  document.querySelectorAll('[data-icon]').forEach(function(card){
+    var key = card.dataset.icon;
+    var markup = ICONS[key].trim();
+    card.querySelector('.icon-render').innerHTML = markup;
+    card.querySelector('.icon-code').textContent = markup;
+  });
+})();
+</script>
+
+
+</body></html>
