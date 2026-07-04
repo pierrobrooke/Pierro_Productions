@@ -1,0 +1,116 @@
+/* Sub-brand themes — same five hexes, different ratios (brand-guidelines §3).
+   Apply via <BrandProvider brand="…"> which sets data-brand on its root. */
+
+/* Pierro Productions (master) is the :root default in tokens.css.
+   Restated here so nesting a master section inside another brand works. */
+[data-brand='pierro'] {
+  --pp-bg: var(--pp-porcelain);
+  --pp-surface: color-mix(in srgb, var(--pp-porcelain), white 55%);
+  --pp-surface-2: color-mix(in srgb, var(--pp-porcelain), white 30%);
+  --pp-ink: var(--pp-gunpowder);
+  --pp-ink-muted: var(--pp-ink-62);
+  --pp-ink-faint: var(--pp-ink-40);
+  --pp-accent: var(--pp-orchid);
+  --pp-on-accent: var(--pp-porcelain);
+  --pp-secondary: var(--pp-forest);
+  --pp-soft: var(--pp-rose);
+  --pp-highlight: var(--pp-orchid);
+  --pp-line: var(--pp-line-dark);
+  --pp-font-display: 'Fraunces Variable', Georgia, serif;
+  --pp-display-weight: 480;
+}
+
+/* Cotton Candy Revolt — candy color with teeth. No forest.
+   Orchid 35 · Gunpowder 30 · Rose 25 · Porcelain 10 */
+[data-brand='cotton-candy-revolt'] {
+  --pp-bg: var(--pp-rose);
+  --pp-surface: color-mix(in srgb, var(--pp-rose), white 45%);
+  --pp-surface-2: color-mix(in srgb, var(--pp-rose), white 25%);
+  --pp-ink: var(--pp-gunpowder);
+  --pp-ink-muted: var(--pp-ink-62);
+  --pp-ink-faint: var(--pp-ink-40);
+  --pp-accent: var(--pp-orchid);
+  --pp-on-accent: var(--pp-porcelain);
+  --pp-secondary: var(--pp-gunpowder);
+  --pp-soft: var(--pp-porcelain);
+  --pp-highlight: var(--pp-orchid);
+  --pp-line: var(--pp-line-dark);
+  --pp-font-display: 'Bricolage Grotesque Variable', sans-serif;
+  --pp-display-weight: 640;
+}
+
+/* The Frequency Blueprint — growth + warmth; orchid only as a spark.
+   Forest 35 · Porcelain 35 · Gunpowder 20 · Rose 5 · Orchid 5 */
+[data-brand='frequency-blueprint'] {
+  --pp-bg: var(--pp-porcelain);
+  --pp-surface: color-mix(in srgb, var(--pp-porcelain), white 55%);
+  --pp-surface-2: color-mix(in srgb, var(--pp-forest), var(--pp-porcelain) 75%);
+  --pp-ink: var(--pp-gunpowder);
+  --pp-ink-muted: var(--pp-ink-62);
+  --pp-ink-faint: var(--pp-ink-40);
+  --pp-accent: var(--pp-forest);
+  --pp-on-accent: var(--pp-gunpowder);
+  --pp-secondary: var(--pp-forest);
+  --pp-soft: var(--pp-rose);
+  --pp-highlight: var(--pp-orchid);
+  --pp-line: var(--pp-line-dark);
+  --pp-font-display: 'Fraunces Variable', Georgia, serif;
+  --pp-display-weight: 420;
+}
+
+/* Zensual Mastery — intimacy-led; dark reads as sophistication.
+   Rose 35 · Gunpowder 30 · Porcelain 20 · Orchid 10 · Forest 5 */
+[data-brand='zensual-mastery'] {
+  --pp-bg: var(--pp-rose);
+  --pp-surface: color-mix(in srgb, var(--pp-rose), white 50%);
+  --pp-surface-2: color-mix(in srgb, var(--pp-rose), white 28%);
+  --pp-ink: var(--pp-gunpowder);
+  --pp-ink-muted: var(--pp-ink-62);
+  --pp-ink-faint: var(--pp-ink-40);
+  --pp-accent: var(--pp-orchid);
+  --pp-on-accent: var(--pp-porcelain);
+  --pp-secondary: var(--pp-gunpowder);
+  --pp-soft: var(--pp-porcelain);
+  --pp-highlight: var(--pp-orchid);
+  --pp-line: var(--pp-line-dark);
+  --pp-font-display: 'Cormorant Variable', Georgia, serif;
+  --pp-display-weight: 560;
+}
+
+/* Pole Class Pro — dark theme. Strength + visible movement.
+   Gunpowder 40 · Orchid 25 · Rose 20 · Porcelain 10 · Forest 5 */
+[data-brand='pole-class-pro'] {
+  --pp-bg: var(--pp-gunpowder);
+  --pp-surface: var(--pp-gunpowder-2);
+  --pp-surface-2: #2b2b2e;
+  --pp-ink: var(--pp-porcelain);
+  --pp-ink-muted: var(--pp-porcelain-75);
+  --pp-ink-faint: var(--pp-porcelain-55);
+  --pp-accent: var(--pp-orchid);
+  --pp-on-accent: var(--pp-porcelain);
+  --pp-secondary: var(--pp-rose);
+  --pp-soft: var(--pp-rose);
+  --pp-highlight: var(--pp-orchid);
+  --pp-line: var(--pp-line-light);
+  --pp-font-display: 'Big Shoulders Display Variable', sans-serif;
+  --pp-display-weight: 700;
+}
+
+/* Web Development & Design — dark-forward, B2B-credible.
+   Gunpowder 45 · Porcelain 25 · Forest 20 · Orchid 8 · Rose 2 */
+[data-brand='web-design'] {
+  --pp-bg: var(--pp-gunpowder);
+  --pp-surface: var(--pp-gunpowder-2);
+  --pp-surface-2: #2b2b2e;
+  --pp-ink: var(--pp-porcelain);
+  --pp-ink-muted: var(--pp-porcelain-75);
+  --pp-ink-faint: var(--pp-porcelain-55);
+  --pp-accent: var(--pp-orchid);
+  --pp-on-accent: var(--pp-porcelain);
+  --pp-secondary: var(--pp-forest);
+  --pp-soft: var(--pp-forest);
+  --pp-highlight: var(--pp-forest);
+  --pp-line: var(--pp-line-light);
+  --pp-font-display: 'Space Grotesk Variable', sans-serif;
+  --pp-display-weight: 560;
+}

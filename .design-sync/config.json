@@ -1,0 +1,16 @@
+{
+  "pkg": "@pierro-productions/butterfly-system",
+  "globalName": "PierroDS",
+  "shape": "package",
+  "buildCmd": "npm run build",
+  "cssEntry": "dist/index.css",
+  "extraFonts": ["dist/styles/fonts.css"],
+  "docsDir": "docs",
+  "readmeHeader": ".design-sync/conventions.md",
+  "overrides": {
+    "Lockup": { "cardMode": "column" },
+    "PageHeader": { "cardMode": "column" },
+    "Display": { "cardMode": "column" }
+  },
+  "guidelinesGlob": ["brand/*.md"]
+}
