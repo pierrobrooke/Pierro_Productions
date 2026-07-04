@@ -4,11 +4,14 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
+    "predev": "npm --prefix design-system run build",
     "dev": "vite",
+    "prebuild": "npm --prefix design-system run build",
     "build": "tsc -b && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@pierro-productions/butterfly-system": "file:./design-system",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },

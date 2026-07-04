@@ -12,5 +12,5 @@
     "PageHeader": { "cardMode": "column" },
     "Display": { "cardMode": "column" }
   },
-  "guidelinesGlob": ["brand/*.md"]
+  "guidelinesGlob": ["../brand/*.md"]
 }

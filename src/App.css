@@ -1,0 +1,66 @@
+/* Page-level rhythm only — all look-and-feel comes from the Butterfly System. */
+
+html,
+body {
+  margin: 0;
+}
+
+.page {
+  min-height: 100vh;
+}
+
+.page__inner {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 var(--pp-space-6);
+}
+
+.page__main {
+  padding: var(--pp-space-7) 0 var(--pp-space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--pp-space-6);
+}
+
+.page__brands {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pp-space-2);
+}
+
+.page__style-chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 0.75rem;
+}
+
+.page__footer {
+  border-top: 1px solid var(--pp-line);
+  padding: var(--pp-space-6) 0 var(--pp-space-7);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--pp-space-4);
+}
+
+.page__footer-sig {
+  font-family: var(--pp-font-display);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--pp-ink-faint);
+}
+
+.page__footer-note {
+  font-family: var(--pp-font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--pp-ink-faint);
+}
+
+@media (max-width: 600px) {
+  .page__inner {
+    padding: 0 var(--pp-space-4);
+  }
+}
