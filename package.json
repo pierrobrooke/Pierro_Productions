@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
+    "postinstall": "npm --prefix design-system install",
     "predev": "npm --prefix design-system run build",
     "dev": "vite",
     "prebuild": "npm --prefix design-system run build",

@@ -2,12 +2,20 @@
 // npm packages that ship them (fontsource variable fonts + Switzer) so the
 // built package is fully self-hosted.
 import { cpSync, mkdirSync, copyFileSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { createRequire } from 'node:module';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
-const nm = join(root, 'node_modules');
 const out = join(root, 'dist');
+const require = createRequire(import.meta.url);
+
+// Resolve a font package's own directory via Node's module resolution
+// (which walks up through design-system/node_modules to the repo root's)
+// instead of assuming node_modules sits next to this script — works whether
+// the package was installed locally in design-system/ or hoisted to the
+// workspace root.
+const pkgDir = (name) => dirname(require.resolve(`${name}/package.json`));
 
 cpSync(join(root, 'src/styles'), join(out, 'styles'), { recursive: true });
 mkdirSync(join(out, 'fonts'), { recursive: true });
@@ -21,14 +29,15 @@ const variable = [
   ['@fontsource-variable/space-grotesk', 'space-grotesk-latin-wght-normal.woff2', 'SpaceGrotesk-Variable.woff2'],
 ];
 for (const [pkg, file, dest] of variable) {
-  copyFileSync(join(nm, pkg, 'files', file), join(out, 'fonts', dest));
+  copyFileSync(join(pkgDir(pkg), 'files', file), join(out, 'fonts', dest));
 }
 
 // Switzer static weights (300–700) from @carrot-kpi/switzer-font.
-const switzerFiles = readdirSync(join(nm, '@carrot-kpi/switzer-font/files'));
+const switzerFilesDir = join(pkgDir('@carrot-kpi/switzer-font'), 'files');
+const switzerFiles = readdirSync(switzerFilesDir);
 const wanted = /switzer-latin-(300|400|500|600|700)-normal\.woff2$/;
 for (const f of switzerFiles) {
-  if (wanted.test(f)) copyFileSync(join(nm, '@carrot-kpi/switzer-font/files', f), join(out, 'fonts', f));
+  if (wanted.test(f)) copyFileSync(join(switzerFilesDir, f), join(out, 'fonts', f));
 }
 
 // Flattened stylesheet for consumers (and the design-sync cssEntry): tokens +
