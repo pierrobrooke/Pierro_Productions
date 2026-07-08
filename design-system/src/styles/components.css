@@ -1,0 +1,458 @@
+/* The Butterfly System — component styles.
+   Class vocabulary: every class is pp-<component>[--modifier]. */
+
+/* ── Root ─────────────────────────────────────────────────────── */
+.pp-root {
+  background: var(--pp-bg);
+  color: var(--pp-ink);
+  font-family: var(--pp-font-body);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+/* ── Typography ───────────────────────────────────────────────── */
+.pp-display {
+  font-family: var(--pp-font-display);
+  font-variation-settings: 'wght' var(--pp-display-weight);
+  font-weight: 500;
+  line-height: 1.06;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+  margin: 0;
+}
+.pp-display--xl { font-size: clamp(2.8rem, 7vw, 5rem); }
+.pp-display--lg { font-size: clamp(2.2rem, 5vw, 3.4rem); }
+.pp-display--md { font-size: clamp(1.7rem, 4vw, 2.4rem); }
+.pp-display em { font-style: italic; font-weight: inherit; }
+
+.pp-heading {
+  font-family: var(--pp-font-display);
+  font-variation-settings: 'wght' var(--pp-display-weight);
+  font-weight: 500;
+  line-height: 1.15;
+  margin: 0;
+}
+.pp-heading--lg { font-size: 1.6rem; }
+.pp-heading--md { font-size: 1.3rem; }
+.pp-heading--sm { font-size: 1.05rem; }
+
+.pp-eyebrow {
+  font-family: var(--pp-font-body);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: var(--pp-track);
+  text-transform: uppercase;
+  color: var(--pp-ink-faint);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.pp-eyebrow--rule::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.7;
+}
+.pp-eyebrow--accent { color: var(--pp-accent); }
+
+.pp-text {
+  font-family: var(--pp-font-body);
+  margin: 0;
+  line-height: 1.65;
+}
+.pp-text--md { font-size: 1rem; }
+.pp-text--sm { font-size: 0.875rem; }
+.pp-text--lede { font-size: 1.1rem; max-width: 52ch; }
+.pp-text--muted { color: var(--pp-ink-muted); }
+
+/* ── SectionLabel ─────────────────────────────────────────────── */
+.pp-section-label {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: var(--pp-track);
+  text-transform: uppercase;
+  color: var(--pp-ink-faint);
+  margin: 0 0 var(--pp-space-5);
+  padding-bottom: var(--pp-space-3);
+  border-bottom: 1px solid var(--pp-line);
+}
+
+/* ── Button ───────────────────────────────────────────────────── */
+.pp-btn {
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  font-family: var(--pp-font-body);
+  font-weight: 500;
+  border-radius: var(--pp-radius-pill);
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform var(--pp-dur) var(--pp-ease), background var(--pp-dur-fast) ease,
+    color var(--pp-dur-fast) ease, border-color var(--pp-dur-fast) ease;
+}
+.pp-btn--md { font-size: 0.9rem; padding: 0.65em 1.6em; }
+.pp-btn--sm { font-size: 0.78rem; padding: 0.5em 1.2em; }
+.pp-btn--lg { font-size: 1rem; padding: 0.8em 2em; }
+
+.pp-btn--primary {
+  background: var(--pp-accent);
+  color: var(--pp-on-accent);
+}
+.pp-btn--secondary {
+  background: transparent;
+  color: var(--pp-ink);
+  border-color: var(--pp-ink);
+}
+.pp-btn--ghost {
+  background: transparent;
+  color: var(--pp-ink);
+}
+.pp-btn--ghost:hover { background: var(--pp-surface-2); }
+.pp-btn:disabled { opacity: 0.45; cursor: not-allowed; }
+
+/* Breath Bloom — scale 1 → 1.02 and settle (motion §7) */
+.pp-btn:hover:not(:disabled) { transform: scale(1.02); }
+
+/* Iridescent Edge — moving pink → green reflective edge on hover (motion §7) */
+.pp-btn--primary::after,
+.pp-btn--secondary::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  z-index: -1;
+  border-radius: inherit;
+  background: linear-gradient(120deg, var(--pp-rose), var(--pp-orchid), var(--pp-forest), var(--pp-rose));
+  background-size: 300% 300%;
+  opacity: 0;
+  transition: opacity var(--pp-dur) var(--pp-ease);
+}
+.pp-btn--primary:hover:not(:disabled)::after,
+.pp-btn--secondary:hover:not(:disabled)::after {
+  opacity: 1;
+  animation: ppIridescent 2.4s linear infinite;
+}
+@keyframes ppIridescent {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ── Tag / Pill ───────────────────────────────────────────────── */
+.pp-tag {
+  display: inline-block;
+  font-family: var(--pp-font-body);
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: var(--pp-ink-muted);
+  background: var(--pp-surface-2);
+  padding: 3px 10px;
+  border-radius: var(--pp-radius-pill);
+}
+.pp-tag--accent {
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.62rem;
+  color: var(--pp-on-accent);
+  background: var(--pp-accent);
+  padding: 3px 10px;
+}
+.pp-tag--outline {
+  background: transparent;
+  border: 1px solid var(--pp-line);
+}
+
+/* ── Card ─────────────────────────────────────────────────────── */
+.pp-card {
+  background: var(--pp-surface);
+  border: 1px solid var(--pp-line);
+  border-radius: var(--pp-radius-md);
+  padding: var(--pp-space-5);
+}
+.pp-card--flush { padding: 0; overflow: hidden; }
+.pp-card--bloom {
+  position: relative;
+  isolation: isolate;
+  transition: transform var(--pp-dur) var(--pp-ease);
+}
+.pp-card--bloom:hover { transform: scale(1.02); }
+.pp-card--bloom::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  z-index: -1;
+  border-radius: inherit;
+  background: linear-gradient(120deg, var(--pp-rose), var(--pp-orchid), var(--pp-forest), var(--pp-rose));
+  background-size: 300% 300%;
+  opacity: 0;
+  transition: opacity var(--pp-dur) var(--pp-ease);
+}
+.pp-card--bloom:hover::after { opacity: 1; animation: ppIridescent 2.4s linear infinite; }
+
+/* ── BrandCard ────────────────────────────────────────────────── */
+.pp-brand-card {
+  background: var(--pp-surface);
+  border: 1px solid var(--pp-line);
+  border-radius: var(--pp-radius-lg);
+  padding: 1.75rem 2rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: start;
+  gap: 1.25rem;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  transition: background var(--pp-dur-fast) ease;
+}
+.pp-brand-card:hover { background: var(--pp-surface-2); }
+.pp-brand-card__number {
+  font-family: var(--pp-font-display);
+  font-size: 0.85rem;
+  color: var(--pp-ink-faint);
+  padding-top: 3px;
+  min-width: 18px;
+}
+.pp-brand-card__name {
+  font-family: var(--pp-font-display);
+  font-variation-settings: 'wght' var(--pp-display-weight);
+  font-size: 1.35rem;
+  line-height: 1.2;
+  margin: 0 0 0.35rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.pp-brand-card__desc {
+  font-size: 0.875rem;
+  color: var(--pp-ink-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+.pp-brand-card__tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 0.75rem; }
+.pp-brand-card__arrow {
+  color: var(--pp-ink-faint);
+  font-size: 18px;
+  padding-top: 2px;
+  transition: transform var(--pp-dur-fast) ease, color var(--pp-dur-fast) ease;
+}
+.pp-brand-card:hover .pp-brand-card__arrow { color: var(--pp-ink); transform: translateX(3px); }
+
+/* ── ThroughLine ──────────────────────────────────────────────── */
+.pp-through-line {
+  background: var(--pp-inverse-bg);
+  color: var(--pp-inverse-ink);
+  border-radius: var(--pp-radius-lg);
+  padding: 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.pp-through-line__title {
+  font-family: var(--pp-font-display);
+  font-variation-settings: 'wght' var(--pp-display-weight);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  line-height: 1.2;
+  margin: 0 0 0.75rem;
+}
+.pp-through-line__body {
+  font-size: 0.875rem;
+  color: var(--pp-porcelain-75);
+  line-height: 1.75;
+  max-width: 52ch;
+  margin: 0;
+}
+.pp-through-line__usp {
+  font-family: var(--pp-font-display);
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--pp-porcelain-55);
+  margin: 1.5rem 0 0;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--pp-line-light);
+}
+.pp-through-line__mark {
+  position: absolute;
+  right: 1.5rem;
+  top: 1.25rem;
+  width: 64px;
+  height: 64px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* ── Lockup ───────────────────────────────────────────────────── */
+.pp-lockup {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1;
+  color: inherit; /* a cross-brand lockup keeps the host page's ink */
+  text-decoration: none;
+}
+.pp-lockup--row { flex-direction: row; align-items: baseline; gap: 0.5em; }
+.pp-lockup__display {
+  font-family: var(--pp-font-display);
+  font-variation-settings: 'wght' var(--pp-display-weight);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.pp-lockup__tracked {
+  font-family: var(--pp-font-body);
+  font-weight: 500;
+  letter-spacing: var(--pp-track);
+  text-transform: uppercase;
+  margin-top: 0.42em;
+}
+.pp-lockup--sm .pp-lockup__display { font-size: 1.1rem; }
+.pp-lockup--sm .pp-lockup__tracked { font-size: 0.48rem; }
+.pp-lockup--md .pp-lockup__display { font-size: 1.8rem; }
+.pp-lockup--md .pp-lockup__tracked { font-size: 0.72rem; }
+.pp-lockup--lg .pp-lockup__display { font-size: 3rem; }
+.pp-lockup--lg .pp-lockup__tracked { font-size: 1.1rem; }
+.pp-lockup--row .pp-lockup__tracked { margin-top: 0; }
+
+/* ── Marks (icon system — brand-guidelines §6) ────────────────── */
+.pp-mark { display: inline-block; }
+.pp-mark svg { width: 100%; height: 100%; display: block; }
+
+.pp-mark-eye .pp-eye-rotate { transform-origin: 50px 50px; animation: ppMarkSpin 36s linear infinite; }
+.pp-mark-eye .pp-eye-core {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: ppEyeCore 3.2s ease-in-out infinite;
+}
+
+.pp-mark-vein .pp-vein-line {
+  fill: none;
+  stroke: var(--pp-ink);
+  stroke-width: 1.6;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: ppVeinDraw 4.4s ease-in-out infinite;
+}
+.pp-mark-vein .pp-vein-bloom { animation: ppVeinBloom 4.4s ease-in-out infinite; }
+
+.pp-mark-conv .pp-conv-spin { transform-origin: 50px 50px; animation: ppMarkSpin 48s linear infinite; }
+
+.pp-mark-scatter .pp-scatter-dot {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: ppScatterPulse 3.6s ease-in-out infinite;
+}
+.pp-mark-scatter .pp-scatter-core {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: ppScatterCore 3.6s ease-in-out infinite;
+}
+
+@keyframes ppMarkSpin { to { transform: rotate(360deg); } }
+@keyframes ppEyeCore {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.25); opacity: 0.7; }
+}
+@keyframes ppVeinDraw {
+  0% { stroke-dashoffset: 1; }
+  35% { stroke-dashoffset: 0; }
+  70% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 1; }
+}
+@keyframes ppVeinBloom {
+  0% { r: 0; opacity: 0; }
+  35% { r: 7; opacity: 1; }
+  70% { r: 7; opacity: 1; }
+  100% { r: 0; opacity: 0; }
+}
+@keyframes ppScatterPulse {
+  0%, 100% { transform: scale(1); opacity: 0.55; }
+  50% { transform: scale(1.6); opacity: 1; }
+}
+@keyframes ppScatterCore {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(0.82); }
+}
+
+/* ── VeinLoader ───────────────────────────────────────────────── */
+.pp-vein-loader {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--pp-space-3);
+}
+.pp-vein-loader__label {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: var(--pp-track);
+  text-transform: uppercase;
+  color: var(--pp-ink-faint);
+}
+
+/* ── Input / Field ────────────────────────────────────────────── */
+.pp-input {
+  font-family: var(--pp-font-body);
+  font-size: 0.95rem;
+  color: var(--pp-ink);
+  background: var(--pp-surface);
+  border: 1px solid var(--pp-line);
+  border-radius: 10px;
+  padding: 0.65em 1em;
+  width: 100%;
+  outline: none;
+  transition: border-color var(--pp-dur-fast) ease, box-shadow var(--pp-dur-fast) ease;
+}
+.pp-input::placeholder { color: var(--pp-ink-faint); }
+.pp-input:focus {
+  border-color: var(--pp-accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--pp-accent), transparent 78%);
+}
+.pp-input--error { border-color: var(--pp-orchid); }
+.pp-input:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.pp-field { display: flex; flex-direction: column; gap: var(--pp-space-2); }
+.pp-field__label {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: var(--pp-track);
+  text-transform: uppercase;
+  color: var(--pp-ink-muted);
+}
+.pp-field__hint { font-size: 0.78rem; color: var(--pp-ink-faint); margin: 0; }
+.pp-field__error { font-size: 0.78rem; color: var(--pp-orchid); font-weight: 500; margin: 0; }
+
+/* ── PageHeader ───────────────────────────────────────────────── */
+.pp-page-header {
+  padding: var(--pp-space-8) 0 var(--pp-space-7);
+  border-bottom: 1px solid var(--pp-line);
+  display: flex;
+  flex-direction: column;
+  gap: var(--pp-space-4);
+}
+.pp-page-header .pp-text--lede { color: var(--pp-ink-muted); }
+
+/* ── Reduced motion (brand rule: drop to static, no animation) ── */
+@media (prefers-reduced-motion: reduce) {
+  .pp-mark *,
+  .pp-btn,
+  .pp-btn::after,
+  .pp-card--bloom,
+  .pp-card--bloom::after,
+  .pp-vein-loader * {
+    animation: none !important;
+    transition: none !important;
+  }
+  /* Vein marks must freeze at the DRAWN state, not the invisible start frame */
+  .pp-mark-vein .pp-vein-line {
+    stroke-dashoffset: 0;
+  }
+  .pp-mark-vein .pp-vein-bloom {
+    r: 7px;
+    opacity: 1;
+  }
+}

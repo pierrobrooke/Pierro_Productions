@@ -1,0 +1,85 @@
+/* Self-hosted brand fonts — The Butterfly System.
+   Body: Switzer everywhere (stand-in for Söhne until licensed).
+   Headlines: one family per brand; Fraunces stands in for Prime Serif. */
+
+/* Switzer — system-wide body font (ITF Free Font License) */
+@font-face {
+  font-family: 'Switzer';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('../fonts/switzer-latin-300-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Switzer';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/switzer-latin-400-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Switzer';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../fonts/switzer-latin-500-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Switzer';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/switzer-latin-600-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Switzer';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/switzer-latin-700-normal.woff2') format('woff2');
+}
+
+/* Fraunces — master headline (Prime Serif stand-in) + The Frequency Blueprint */
+@font-face {
+  font-family: 'Fraunces Variable';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('../fonts/Fraunces-Variable.woff2') format('woff2-variations');
+}
+
+/* Bricolage Grotesque — Cotton Candy Revolt */
+@font-face {
+  font-family: 'Bricolage Grotesque Variable';
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url('../fonts/BricolageGrotesque-Variable.woff2') format('woff2-variations');
+}
+
+/* Cormorant — Zensual Mastery */
+@font-face {
+  font-family: 'Cormorant Variable';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url('../fonts/Cormorant-Variable.woff2') format('woff2-variations');
+}
+
+/* Big Shoulders Display — Pole Class Pro */
+@font-face {
+  font-family: 'Big Shoulders Display Variable';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('../fonts/BigShouldersDisplay-Variable.woff2') format('woff2-variations');
+}
+
+/* Space Grotesk — Web Development & Design */
+@font-face {
+  font-family: 'Space Grotesk Variable';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url('../fonts/SpaceGrotesk-Variable.woff2') format('woff2-variations');
+}

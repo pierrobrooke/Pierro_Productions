@@ -1,0 +1,64 @@
+/* The Butterfly System — design tokens.
+   Master palette: five colors, everywhere. Sub-brands remix the ratios,
+   never the hexes (see brand/brand-guidelines.md §3). */
+
+:root {
+  /* ── Master palette ─────────────────────────────────────────── */
+  --pp-forest: #8FAC7E;     /* growth, wisdom, calm authority        */
+  --pp-gunpowder: #18181A;  /* luxury, editorial confidence          */
+  --pp-porcelain: #F6E5D3;  /* human warmth, feminine softness       */
+  --pp-orchid: #E73788;     /* visibility, bold feminine energy      */
+  --pp-rose: #F8CCC9;       /* luxury, intimacy, soft expression     */
+
+  /* Derived neutrals (tints of the palette, never new hues) */
+  --pp-gunpowder-2: #222224;                          /* raised dark surface */
+  --pp-ink-40: rgba(24, 24, 26, 0.40);
+  --pp-ink-62: rgba(24, 24, 26, 0.62);
+  --pp-porcelain-55: rgba(246, 229, 211, 0.55);
+  --pp-porcelain-75: rgba(246, 229, 211, 0.75);
+  --pp-line-dark: rgba(24, 24, 26, 0.14);
+  --pp-line-light: rgba(246, 229, 211, 0.16);
+
+  /* ── Semantic roles (master brand defaults; themes.css remixes) ── */
+  --pp-bg: var(--pp-porcelain);
+  --pp-surface: color-mix(in srgb, var(--pp-porcelain), white 55%);
+  --pp-surface-2: color-mix(in srgb, var(--pp-porcelain), white 30%);
+  --pp-ink: var(--pp-gunpowder);
+  --pp-ink-muted: var(--pp-ink-62);
+  --pp-ink-faint: var(--pp-ink-40);
+  --pp-accent: var(--pp-orchid);
+  --pp-on-accent: var(--pp-porcelain);
+  --pp-secondary: var(--pp-forest);
+  --pp-soft: var(--pp-rose);
+  --pp-highlight: var(--pp-orchid);
+  --pp-line: var(--pp-line-dark);
+  --pp-inverse-bg: var(--pp-gunpowder);
+  --pp-inverse-surface: var(--pp-gunpowder-2);
+  --pp-inverse-ink: var(--pp-porcelain);
+
+  /* ── Typography ─────────────────────────────────────────────── */
+  --pp-font-display: 'Fraunces Variable', Georgia, serif;
+  --pp-font-body: 'Switzer', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --pp-display-weight: 480;
+  --pp-track: 0.16em;            /* tracked-uppercase letterspacing */
+
+  /* ── Space / radius / line ──────────────────────────────────── */
+  --pp-space-1: 0.25rem;
+  --pp-space-2: 0.5rem;
+  --pp-space-3: 0.75rem;
+  --pp-space-4: 1rem;
+  --pp-space-5: 1.5rem;
+  --pp-space-6: 2rem;
+  --pp-space-7: 3rem;
+  --pp-space-8: 4rem;
+  --pp-radius-sm: 8px;
+  --pp-radius-md: 14px;
+  --pp-radius-lg: 16px;
+  --pp-radius-pill: 999px;
+
+  /* ── Motion (brand-guidelines §7) ───────────────────────────── */
+  --pp-ease: cubic-bezier(0.65, 0, 0.35, 1);
+  --pp-dur-fast: 150ms;
+  --pp-dur: 300ms;
+  --pp-dur-draw: 450ms;
+}

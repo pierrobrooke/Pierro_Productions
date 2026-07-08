@@ -1,0 +1,41 @@
+{
+  "name": "@pierro-productions/butterfly-system",
+  "version": "1.0.0",
+  "description": "The Butterfly System — Pierro Productions design system. One master brand, five sub-brands, same five colors throughout.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./styles.css": "./dist/styles/index.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && tsc -p tsconfig.json && node scripts/copy-assets.mjs"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "devDependencies": {
+    "@carrot-kpi/switzer-font": "^0.1.0",
+    "@fontsource-variable/big-shoulders-display": "^5.2.5",
+    "@fontsource-variable/bricolage-grotesque": "^5.2.5",
+    "@fontsource-variable/cormorant": "^5.2.5",
+    "@fontsource-variable/fraunces": "^5.2.5",
+    "@fontsource-variable/space-grotesk": "^5.2.5",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.5.0"
+  },
+  "license": "UNLICENSED",
+  "private": true
+}
