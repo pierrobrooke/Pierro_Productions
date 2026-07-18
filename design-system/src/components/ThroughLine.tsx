@@ -15,7 +15,7 @@ export interface ThroughLineProps {
 }
 
 /**
- * The dark editorial statement panel ("I see your frequency before you do.")
+ * The dark editorial statement panel ("i feel your frequency.")
  * — Gunpowder ground, Warm Porcelain text, optional italic USP line and a
  * faint Eye Mark in the corner. Use once per page for the anchoring
  * statement, not as a general container.
