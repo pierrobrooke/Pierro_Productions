@@ -3,13 +3,7 @@ import { BrandProvider, ThroughLine } from '@pierro-productions/butterfly-system
 export const Statement = () => (
   <BrandProvider style={{ padding: '2rem' }}>
     <ThroughLine
-      title={
-        <>
-          I see your frequency
-          <br />
-          before you do.
-        </>
-      }
+      title="i feel your frequency."
       usp={'"I help people recognize they’ve always been exactly who they were meant to become."'}
     >
       Not mindset. Not motivation. Frequency — the energetic signature you're broadcasting
